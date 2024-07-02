@@ -1,0 +1,1 @@
+Due to the large size, Sent140 is not uploaded here. However, we use the FedProx's code to generate datasets. Please refer to [FedProx](https://github.com/litian96/FedProx/blob/master/data/sent140/README.md) to download the dataset.
