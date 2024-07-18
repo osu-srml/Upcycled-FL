@@ -48,14 +48,13 @@ class LocalUpdate(object):
             norm = Gamma.sample()
             norm.to(self.device)
             coef = norm / norm_sepe
-#             print(norm, norm_sepe)
+            
             for item in grad_dire:
                 item *= coef
             self.noise = grad_dire
 
         early_stop = self.args.local_ep
         flag = True
-        # sample = torch.rand(1, device=self.device)
         if torch.rand(1, device=self.device) < self.args.straggler:
             early_stop = int(torch.torch.rand(1) * self.args.local_ep)
             while early_stop == 0:
@@ -91,11 +90,8 @@ class LocalUpdate(object):
                 w_ls.append(w_temp)
                 norm += torch.norm(w_temp)
             w_total = torch.hstack(w_ls)
-#             print(torch.norm(w_total))
-#             return norm
             return torch.norm(w_total)
         norm = get_norm(w)
-#         print(norm)
         if norm > self.args.clip:
             for key in w.keys():
                 w[key] *= (self.args.clip / norm)
@@ -133,4 +129,3 @@ class LocalUpdate(object):
 
         accuracy = correct/total
         return accuracy, loss / cnt
-#
