@@ -31,9 +31,6 @@ class Server:
         if "sent140" in args.dataset:
             self.global_model = SentimentLSTM()
             args.feature_len = 256
-        if  args.dataset == 'nist':
-            self.global_model = Twolayer(args=args)
-            args.feature_len = 28*28
         self.global_model.to(self.device)
         args.num_users = len(self.user_groups.keys())
         exp_details(args)
