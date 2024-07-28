@@ -43,7 +43,17 @@ For objective Perturbation, please keep *clip* and *sigma* as 0.
 
 ### Citing
 
-TODO
+```
+@article{
+yin2024federated,
+title={Federated Learning with Reduced Information Leakage and Computation},
+author={Tongxin Yin and Xuwei Tan and Xueru Zhang and Mohammad Mahdi Khalili and Mingyan Liu},
+journal={Transactions on Machine Learning Research},
+issn={2835-8856},
+year={2024},
+url={https://openreview.net/forum?id=ZJ4A3xhADV}
+}
+```
 
 ### Contact
 
